@@ -4,11 +4,19 @@ Here's the link to the [Jupyter Notebook](https://nbviewer.jupyter.org/github/ri
 I also wrote a tutorial for this project on [Medium](https://towardsdatascience.com/i-taught-my-computer-to-classify-chinese-calligraphy-styles-4d0160478ce1).
 
 ## Table of Contents
-[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##motivation)
-[Data Collection](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##data-collection)
-[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##Motivation)
-[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##Motivation)
-[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##Motivation)
+[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier#motivation)
+
+[Data Collection](https://github.com/richardcsuwandi/chinese-calligraphy-classifier#data-collection)
+
+[Data Preparation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier#data-preparation)
+
+[Model Building](https://github.com/richardcsuwandi/chinese-calligraphy-classifier#model-building)
+
+[Model Tuning](https://github.com/richardcsuwandi/chinese-calligraphy-classifier#model-tuning)
+
+[Data Cleaning](https://github.com/richardcsuwandi/chinese-calligraphy-classifier#data-cleaning)
+
+[Results Interpretation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier#results-interpretation)
 
 ## Motivation
 As an international student studying in China, I’ve always been fascinated by the diversity of Chinese culture and history.
