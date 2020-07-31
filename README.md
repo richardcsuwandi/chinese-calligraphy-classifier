@@ -24,7 +24,7 @@ However, I did some online search and could not find a decently made dataset for
 So, I decided to create the dataset myself. 
 Fortunately, creating my own dataset isn’t that hard, thanks to Google Images’ search functionality and some JavaScript snippets. 
 Here’s how I did it:
-![Scraping]((https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/scraping.png?raw=true)
+![Scraping](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/scraping.png?raw=true)
 
 - I search the images on Google Images and use this keyword format (style + “字帖網格") to get the most relevant results.
 - I use this [JavaScript code](https://gist.github.com/richardcsuwandi/ca7387d01407366b5b62d9b364e07765) to retrieve the URLs of each of the images.
