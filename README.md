@@ -38,7 +38,7 @@ Here’s how I did it:
 - I downloaded the images using fast.ai’s [download_images function](https://gist.github.com/richardcsuwandi/88281f8a006290e947483b8a8103fca4) 
 - Alternatively, I tried using this [snippet](https://gist.github.com/richardcsuwandi/f006b144801e2b5b2aef77ef3166d870) to automatically download the images from Baidu Images.
 
-## Preparing the Data
+## Data Preparation
 After importing the data, I split the data into training and validation set with an 80:20 ratio. 
 The images are also resized to 224 pixels, which is usually a good value for image recognition tasks.
 Here's some of the images in the dataset:
@@ -47,7 +47,7 @@ Here's some of the images in the dataset:
 
 Observation: The dataset is rather ‘dirty’. Some of the images are not well-aligned and not properly cropped.
 
-## Building the Model
+## Model Building
 For the model, I use the ResNet-50 model architecture with the pre-trained weights on the [ImageNet](http://www.image-net.org/) dataset.
 To train the layers, I use the `fit_one_cycle` method based on the ‘1 cycle policy’, which basically changes the learning rate over time to achieve better results.
 
@@ -55,7 +55,7 @@ To train the layers, I use the `fit_one_cycle` method based on the ‘1 cycle po
 
 After 3 epochs of `fit_one_cycle`, I managed to achieve an accuracy of 82% on the validation set.
 
-## Tuning the Model
+## Model Tuning
 By default, the model’s initial layers are frozen to prevent modifying the pre-trained weights. 
 Let’s try unfreezing all the layers and train the model again.
 To find the perfect learning rate, I used the lr_find and recorder.plot methods to create the learning rate plot.
@@ -67,7 +67,7 @@ I used that point as the first guess for the learning rate and train the model f
 
 ![Tuned](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/tuned.png?raw=true)
 
-## Cleaning the Data
+## Data Cleaning
 fast.ai also provides a nice functionality for cleaning your data using Jupyter widgets. 
 The `ImageCleaner` class displays images for relabeling or deletion.
 ![Cleaning](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/cleaning.png?raw=true)
@@ -80,7 +80,7 @@ I applied the same training steps as above but using the cleaned data.
 With only very few lines of code and very minimum efforts for data collection, I managed to achieve an accuracy of 92%. 
 I believe with more and better-quality data, I can achieve a state-of-the-art result.
 
-## Interpreting the Results
+## Results Interpretation
 I used fast.ai’s `ClassificationInterpretation` class to interpret the results.
 Then, I use plot the confusion matrix to see where the model seems to be confused.
 ![Confusion Matrix](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/conf_mat.png?raw=true)
