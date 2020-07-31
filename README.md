@@ -3,6 +3,13 @@ A Chinese calligraphy classifier built using fast.ai.
 Here's the link to the [Jupyter Notebook](https://nbviewer.jupyter.org/github/richardcsuwandi/chinese-calligraphy-classifier/blob/master/Chinese%20Calligraphy%20Classifier.ipynb) for this project.
 I also wrote a tutorial for this project on [Medium](https://towardsdatascience.com/i-taught-my-computer-to-classify-chinese-calligraphy-styles-4d0160478ce1).
 
+## Table of Contents
+[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##motivation)
+[Data Collection](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##data-collection)
+[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##Motivation)
+[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##Motivation)
+[Motivation](https://github.com/richardcsuwandi/chinese-calligraphy-classifier##Motivation)
+
 ## Motivation
 As an international student studying in China, I’ve always been fascinated by the diversity of Chinese culture and history.
 This motivated me to build a Chinese calligraphy classifier.
@@ -18,7 +25,7 @@ For this project, I picked four styles:
 
 If you are interested, you can read more about these different styles [here](https://en.wikipedia.org/wiki/Chinese_script_styles).
 
-## Collecting the Data
+## Data Collection
 To build a calligraphy classifier, we’re going to need some examples of each style. 
 However, I did some online search and could not find a decently made dataset for various calligraphy styles. 
 So, I decided to create the dataset myself. 
@@ -81,4 +88,5 @@ Then, I use plot the confusion matrix to see where the model seems to be confuse
 From the confusion matrix, it can be seen that the model does pretty well in classifying the ‘zhuanshu’ style. 
 This is probably due to its unique stroke arrangements. 
 To wrap up, I also plotted some predictions by calling the `learn.show_results` method.
+
 ![Results](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/res.png?raw=true)
