@@ -15,6 +15,7 @@ For this project, I picked four styles:
 - Standard Script (楷書 kaishu)
 
 ![4 Styles](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/4_styles.jpg?raw=true)
+
 If you are interested, you can read more about these different styles [here](https://en.wikipedia.org/wiki/Chinese_script_styles).
 
 ## Collecting the Data
@@ -23,6 +24,8 @@ However, I did some online search and could not find a decently made dataset for
 So, I decided to create the dataset myself. 
 Fortunately, creating my own dataset isn’t that hard, thanks to Google Images’ search functionality and some JavaScript snippets. 
 Here’s how I did it:
+![Scraping]((https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/scraping.png?raw=true)
+
 - I search the images on Google Images and use this keyword format (style + “字帖網格") to get the most relevant results.
 - I use this [JavaScript code](https://gist.github.com/richardcsuwandi/ca7387d01407366b5b62d9b364e07765) to retrieve the URLs of each of the images.
 - I downloaded the images using fast.ai’s [download_images function](https://gist.github.com/richardcsuwandi/88281f8a006290e947483b8a8103fca4) 
@@ -34,6 +37,7 @@ The images are also resized to 224 pixels, which is usually a good value for ima
 Here's some of the images in the dataset:
 
 ![Show Batch](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/show_img.png?raw=true)
+
 Observation: The dataset is rather ‘dirty’. Some of the images are not well-aligned and not properly cropped.
 
 ## Building the Model
@@ -41,6 +45,7 @@ For the model, I use the ResNet-50 model architecture with the pre-trained weigh
 To train the layers, I use the `fit_one_cycle` method based on the ‘1 cycle policy’, which basically changes the learning rate over time to achieve better results.
 
 ![Initial](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/initial.png?raw=true)
+
 After 3 epochs of `fit_one_cycle`, I managed to achieve an accuracy of 82% on the validation set.
 
 ## Tuning the Model
@@ -49,6 +54,7 @@ Let’s try unfreezing all the layers and train the model again.
 To find the perfect learning rate, I used the lr_find and recorder.plot methods to create the learning rate plot.
 
 ![LR Plot](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/lr_plot.png?raw=true)
+
 The red dot on the graph indicates the point where the gradient is the steepest. 
 I used that point as the first guess for the learning rate and train the model for another 2 epochs.
 
@@ -63,6 +69,7 @@ The results of the cleaning are saved as a CSV file which I then used to load th
 I applied the same training steps as above but using the cleaned data.
 
 ![Final](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/final.png?raw=true)
+
 With only very few lines of code and very minimum efforts for data collection, I managed to achieve an accuracy of 92%. 
 I believe with more and better-quality data, I can achieve a state-of-the-art result.
 
