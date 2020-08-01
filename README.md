@@ -93,6 +93,7 @@ I believe with more and better-quality data, I can achieve a state-of-the-art re
 ## Results Interpretation
 I used fast.ai’s `ClassificationInterpretation` class to interpret the results.
 Then, I use plot the confusion matrix to see where the model seems to be confused.
+
 ![Confusion Matrix](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/conf_mat.png?raw=true)
 
 From the confusion matrix, it can be seen that the model does pretty well in classifying the ‘*zhuanshu*’ style. 
