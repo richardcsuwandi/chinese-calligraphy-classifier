@@ -100,4 +100,4 @@ From the confusion matrix, it can be seen that the model does pretty well in cla
 This is probably due to its unique stroke arrangements. 
 To wrap up, I also plotted some predictions by calling the `learn.show_results` method.
 
-![Results](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/res.PNG?raw=true)
+![Predictions](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/predictions.PNG?raw=true)
