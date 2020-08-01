@@ -24,10 +24,10 @@ This motivated me to build a Chinese calligraphy classifier.
 
 There are multiple styles of calligraphy, which mainly belong to different dynasties. Each of them has its way of shaping and arranging the character. 
 For this project, I picked four styles:
-- Seal Script (篆書 zhuanshu)
-- Cursive Script (草書 caoshu)
-- Clerical Script (隸書 lishu)
-- Standard Script (楷書 kaishu)
+- Seal Script (篆書 *zhuanshu*)
+- Cursive Script (草書 *caoshu*)
+- Clerical Script (隸書 *lishu*)
+- Standard Script (楷書 *kaishu*)
 
 ![4 Styles](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/4_styles.jpg?raw=true)
 
@@ -57,7 +57,8 @@ Observation: The dataset is rather ‘dirty’. Some of the images are not well-
 
 ## Model Building
 For the model, I use the ResNet-50 model architecture with the pre-trained weights on the [ImageNet](http://www.image-net.org/) dataset.
-To train the layers, I use the `fit_one_cycle` method based on the ‘1 cycle policy’, which basically changes the learning rate over time to achieve better results.
+To train the layers, I use the `fit_one_cycle` method based on the ‘[*1 cycle policy*](https://sgugger.github.io/the-1cycle-policy.html)',
+which basically changes the learning rate over time to achieve better results.
 
 ![Initial](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/initial.png?raw=true)
 
@@ -65,7 +66,7 @@ After 3 epochs of `fit_one_cycle`, I managed to achieve an accuracy of 82% on th
 
 ## Model Tuning
 By default, the model’s initial layers are frozen to prevent modifying the pre-trained weights. 
-Let’s try unfreezing all the layers and train the model again.
+I tried unfreezing all the layers and train the model again for another 2 epochs.
 To find the perfect learning rate, I used the lr_find and recorder.plot methods to create the learning rate plot.
 
 ![LR Plot](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/lr_plot.png?raw=true)
@@ -93,7 +94,7 @@ I used fast.ai’s `ClassificationInterpretation` class to interpret the results
 Then, I use plot the confusion matrix to see where the model seems to be confused.
 ![Confusion Matrix](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/conf_mat.png?raw=true)
 
-From the confusion matrix, it can be seen that the model does pretty well in classifying the ‘zhuanshu’ style. 
+From the confusion matrix, it can be seen that the model does pretty well in classifying the ‘*zhuanshu*’ style. 
 This is probably due to its unique stroke arrangements. 
 To wrap up, I also plotted some predictions by calling the `learn.show_results` method.
 
