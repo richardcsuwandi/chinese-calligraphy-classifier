@@ -41,8 +41,8 @@ Fortunately, creating my own dataset isn’t that hard, thanks to Google Images�
 Here’s how I did it:
 ![Scraping](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/scraping.png?raw=true)
 
-- I search the images on Google Images and use this keyword format (style + “字帖網格") to get the most relevant results.
-- I use this [JavaScript code](https://gist.github.com/richardcsuwandi/ca7387d01407366b5b62d9b364e07765) to retrieve the URLs of each of the images.
+- I searched the images on Google Images and used this keyword format (style + “字帖網格") to get the most relevant results.
+- I used this [JavaScript code](https://gist.github.com/richardcsuwandi/ca7387d01407366b5b62d9b364e07765) to retrieve the URLs of each of the images.
 - I downloaded the images using fast.ai’s [download_images function](https://gist.github.com/richardcsuwandi/88281f8a006290e947483b8a8103fca4) 
 - Alternatively, I tried using this [snippet](https://gist.github.com/richardcsuwandi/f006b144801e2b5b2aef77ef3166d870) to automatically download the images from Baidu Images.
 
@@ -58,7 +58,7 @@ Observation: The dataset is rather ‘dirty’. Some of the images are not well-
 ## Model Building
 For the model, I use the [ResNet-50](https://arxiv.org/abs/1512.03385)
 model architecture with the pre-trained weights on the [ImageNet](http://www.image-net.org/) dataset.
-To train the layers, I use the `fit_one_cycle` method based on the ‘[*1 Cycle Policy*](https://sgugger.github.io/the-1cycle-policy.html)',
+To train the layers, I use the `fit_one_cycle` method based on the '[*1 Cycle Policy*](https://sgugger.github.io/the-1cycle-policy.html)',
 which basically changes the learning rate over time to achieve better results.
 
 ![Initial](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/initial.png?raw=true)
