@@ -56,7 +56,8 @@ Here's some of the images in the dataset:
 Observation: The dataset is rather ‘dirty’. Some of the images are not well-aligned and not properly cropped.
 
 ## Model Building
-For the model, I use the ResNet-50 model architecture with the pre-trained weights on the [ImageNet](http://www.image-net.org/) dataset.
+For the model, I use the [ResNet-50](https://arxiv.org/abs/1512.03385)
+model architecture with the pre-trained weights on the [ImageNet](http://www.image-net.org/) dataset.
 To train the layers, I use the `fit_one_cycle` method based on the ‘[*1 cycle policy*](https://sgugger.github.io/the-1cycle-policy.html)',
 which basically changes the learning rate over time to achieve better results.
 
