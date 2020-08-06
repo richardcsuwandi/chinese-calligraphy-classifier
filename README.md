@@ -63,6 +63,10 @@ which basically changes the learning rate over time to achieve better results.
 
 ![Initial](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/initial.png?raw=true)
 
+|epoch|train_loss|valid_loss|accuracy|
+|---  |---       |---       |---     |
+
+
 After 3 epochs of `fit_one_cycle`, I managed to achieve an accuracy of 82% on the validation set.
 
 ## Model Tuning
