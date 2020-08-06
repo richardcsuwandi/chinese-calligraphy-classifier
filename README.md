@@ -61,17 +61,15 @@ model architecture with the pre-trained weights on the [ImageNet](http://www.ima
 To train the layers, I use the `fit_one_cycle` method based on the '[*1 Cycle Policy*](https://sgugger.github.io/the-1cycle-policy.html)',
 which basically changes the learning rate over time to achieve better results.
 
-![Initial](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/initial.png?raw=true)
-
 ```python
 learn.fit_one_cycle(3)
 ```
 
 |epoch|train_loss|valid_loss|accuracy|
 |---  |---       |---       |---     |
-
-
-
+|0    |1.469915  |0.927739  |0.737500|
+|1    |1.075304  |0.637498  |0.790000|
+|2    |0.820588  |0.574865  |0.822500|
 
 After 3 epochs of `fit_one_cycle`, I managed to achieve an accuracy of 82% on the validation set.
 
