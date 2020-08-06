@@ -83,7 +83,15 @@ To find the perfect learning rate, I used the lr_find and recorder.plot methods 
 The red dot on the graph indicates the point where the gradient is the steepest. 
 I used that point as the first guess for the learning rate and train the model for another 2 epochs.
 
-![Tuned](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/tuned.png?raw=true)
+```python
+min_grad_lr = learn.recorder.min_grad_lr
+learn.fit_one_cycle(2, min_grad_lr)
+```
+
+|epoch|train_loss|valid_loss|accuracy|
+|---  |---       |---       |---     |
+|0    |0.484713  |0.273136  |0.885609|
+|1    |0.491012  |0.287252  |0.878229|
 
 ## Data Cleaning
 fast.ai also provides a nice functionality for cleaning your data using Jupyter widgets. 
@@ -93,7 +101,17 @@ The `ImageCleaner` class displays images for relabeling or deletion.
 The results of the cleaning are saved as a CSV file which I then used to load the data.
 I applied the same training steps as above but using the cleaned data.
 
-![Final](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/final.png?raw=true)
+```python
+min_grad_lr = learn.recorder.min_grad_lr
+learn.fit_one_cycle(4, min_grad_lr)
+```
+
+|epoch|train_loss|valid_loss|accuracy|
+|---  |---       |---       |---     |
+|0    |0.428563  |0.235304  |0.922509|
+|1    |0.398285  |0.289792  |0.892989|
+|2    |0.422449  |0.230904  |0.926199|
+|3    |0.436341  |0.261377  |0.915129|
 
 With only very few lines of code and very minimum efforts for data collection, I managed to achieve an accuracy of 92%. 
 I believe with more and better-quality data, I can achieve a state-of-the-art result.
