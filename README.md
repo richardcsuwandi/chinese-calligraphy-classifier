@@ -66,13 +66,13 @@ which basically changes the learning rate over time to achieve better results.
 After 3 epochs of `fit_one_cycle`, I managed to achieve an accuracy of 82% on the validation set.
 
 ## Model Tuning
-By default, the model’s initial layers are frozen to prevent modifying the pre-trained weights. 
+By default, the model’s initial layers are frozen to prevent modifying the pre-trained weights.
 I tried unfreezing all the layers and train the model again for another 2 epochs.
 To find the perfect learning rate, I used the lr_find and recorder.plot methods to create the learning rate plot.
 
 ![LR Plot](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/lr_plot.png?raw=true)
 
-The red dot on the graph indicates the point where the gradient is the steepest. 
+The red dot on the graph indicates the point where the gradient is the steepest.
 I used that point as the first guess for the learning rate and train the model for another 2 epochs.
 
 ![Tuned](https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/tuned.png?raw=true)
