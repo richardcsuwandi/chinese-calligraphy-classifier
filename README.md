@@ -1,5 +1,6 @@
 # Chinese Calligraphy Classifier
 [![View on Medium](https://img.shields.io/badge/Medium-View%20on%20Medium-red?logo=medium)](https://towardsdatascience.com/i-taught-my-computer-to-classify-chinese-calligraphy-styles-4d0160478ce1)
+
 A Chinese calligraphy classifier built using fast.ai. The Jupyter Notebook of this project can be found [here](https://nbviewer.jupyter.org/github/richardcsuwandi/chinese-calligraphy-classifier/blob/master/Chinese%20Calligraphy%20Classifier.ipynb).
 
 ## Table of Contents
